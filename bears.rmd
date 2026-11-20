@@ -41,12 +41,14 @@ I'll conduct a final ranking at the end of this whole thing.
 ```{r}
 plot(LENGTH~HEADLEN,data=bears)
 ```
+
 As head length increases, so does length. However, this plot is not entirely linear and has some slight deviation.
 
 ```{r}
 model.2 <- lm(LENGTH~HEADLEN,data=bears)
 summary.lm(model.2)
 ```
+
 The adjusted R-Squared is 0.8434, bigger than the previous model's... wowee!
 
 ## Model LENGTH ~ HeadWTH
@@ -54,23 +56,27 @@ The adjusted R-Squared is 0.8434, bigger than the previous model's... wowee!
 ```{r}
 plot(LENGTH~HEADWTH,data=bears)
 ```
+
 This is kind of a weird plot... It appears that as Head width increases, length loosely increases as well. However there is quite a bit of deviation from the usual linear plot.
 
 ```{r}
 model.3 <- lm(LENGTH~HEADWTH,data=bears)
 summary.lm(model.3)
 ```
+
 The adjusted R-Squared is 0.5321, much lower than the previous ones. This makes this plot the lowest score so far.
 ## Model LENGTH ~ CHEST
 
 ```{r}
 plot(LENGTH~CHEST,data=bears)
 ```
+
 Fairly similar to the first two plots; as chest size increases so does the length in a somewhat linear fashion. There is a bit of deviation as well.
 ```{r}
 model.4 <- lm(LENGTH~CHEST,data=bears)
 summary.lm(model.4)
 ```
+
 The adjusted R-Squared is 0.7869, making it the second largest so far.
 
 ## Model LENGTH ~ WEIGHT
@@ -78,9 +84,22 @@ The adjusted R-Squared is 0.7869, making it the second largest so far.
 ```{r}
 plot(LENGTH~WEIGHT,data=bears)
 ```
+
 As weight increases, length does as well, especially at the beginning of the plot. This makes the beginning of the plot deviate a bit from the usual linear plot...
 ```{r}
 model.5 <- lm(LENGTH~WEIGHT,data=bears)
 summary.lm(model.5)
 ```
 
+The adjusted R-Squared of this plot is 0.7423, making it one of the lower numbers.
+
+
+## Final Ranking OK  
+
+#### In order from biggest to smallest adjusted R-Squared values. The smallest are the losers and should be ashamed, ok?  
+  
+LENGTH~HEADLEN - 0.8434  
+LENGTH~CHEST - 0.7869  
+LENGTH~NECK - 0.7476  
+LENGTH~WEIGHT - 0.7423  
+and the loser, LENGTH~HEADWTH - 0.5321  
